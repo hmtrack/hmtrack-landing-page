@@ -48,6 +48,23 @@ body {
   gap: 20px;
 }
 
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-link {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -214,10 +231,11 @@ h1 span {
 }
 
 .mockup-phone {
-  width: 44%;
+  width: 150px;
   position: absolute;
-  right: -10px;
-  bottom: -24px;
+  right: 10px;
+  bottom: -8px;
+  padding: 10px;
 }
 
 .mockup-title {
@@ -235,7 +253,10 @@ h1 span {
 }
 
 .mockup-screen.phone {
-  min-height: 150px;
+  height: 220px;
+  min-height: 0;
+  overflow: hidden;
+  padding: 8px;
 }
 
 .mockup-image {
@@ -245,6 +266,11 @@ h1 span {
   border-radius: 8px;
   object-fit: cover;
   border: 1px solid #dbe2ea;
+}
+
+.mockup-screen.phone .mockup-image {
+  object-fit: contain;
+  background: #ffffff;
 }
 
 .trust {
@@ -453,6 +479,60 @@ h1 span {
   font-size: 0.94rem;
 }
 
+.features-page {
+  padding: 76px 0;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.features-page h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 12px;
+}
+
+.features-page .section-subtitle {
+  margin-bottom: 28px;
+}
+
+.feature-groups {
+  display: grid;
+  gap: 20px;
+}
+
+.feature-group {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.feature-group h2 {
+  margin-bottom: 14px;
+  font-size: 1.3rem;
+}
+
+.feature-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.feature-list li {
+  color: var(--ink);
+  padding-left: 20px;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
 @media (max-width: 980px) {
   .menu {
     display: none;
@@ -483,6 +563,17 @@ h1 span {
 @media (max-width: 560px) {
   .nav {
     min-height: 68px;
+  }
+
+  .nav-cta {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .nav-link {
+    text-align: center;
   }
 
   .btn {
